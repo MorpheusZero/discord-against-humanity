@@ -1,0 +1,29 @@
+<html lang="en">
+  <head>
+    <%- include("./partials/global_header"); %>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h1>Index Page</h1>
+          <p><%= message %></p>
+          <p id="txtSocketTest"></p>
+        </div>
+      </div>
+    </div>
+    <script>
+      const exampleSocket = new WebSocket("ws://localhost:8080/");
+      exampleSocket.onopen = (event) => {
+        exampleSocket.send(
+          "Here's some text that the server is urgently awaiting!"
+        );
+        exampleSocket.onmessage = (event) => {
+          setTimeout(() => {
+            document.getElementById("txtSocketTest").innerText = event.data;
+          }, 3000);
+        };
+      };
+    </script>
+  </body>
+</html>

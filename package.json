@@ -1,0 +1,20 @@
+{
+  "name": "discord-against-humanity",
+  "module": "main.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/ejs": "^3.1.4",
+    "@types/ws": "^8.5.8",
+    "bun-types": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@fastify/static": "^6.11.2",
+    "@fastify/view": "^8.2.0",
+    "ejs": "^3.1.9",
+    "fastify": "^4.24.3",
+    "ws": "^8.14.2"
+  }
+}
